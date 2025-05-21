@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chat Room</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h2 class="title">💬 Hello, {{ username }}!</h2>
+    <a href="/logout" class="logout-button">🚪 Logout</a>
+
+    <ul id="messages"></ul>
+    <input type="text" id="message" placeholder="Type your message here...">
+    <button onclick="sendMessage()">📨 Send</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script>
+        var socket = io.connect('http://127.0.0.1:5000');
+
+        function sendMessage() {
+            var msg = document.getElementById("message").value;
+            if (msg.trim() !== "") {
+                socket.send(msg);
+                document.getElementById("message").value = "";
+            }
+        }
+
+        socket.on('message', function(msg) {
+            var li = document.createElement("li");
+            li.appendChild(document.createTextNode(msg));
+            document.getElementById("messages").appendChild(li);
+        });
+    </script>
+</body>
+</html>

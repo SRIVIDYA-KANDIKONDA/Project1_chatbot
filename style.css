@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&display=swap');
+
+body {
+    font-family: 'Baloo 2', cursive;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb, #a18cd1);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    text-align: center;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+}
+
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+.title {
+    font-size: 36px;
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+form, #messages {
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+}
+
+input, button {
+    font-size: 18px;
+    padding: 14px;
+    margin: 14px auto;
+    border: none;
+    border-radius: 12px;
+    display: block;
+    width: 80%;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    transition: 0.3s ease;
+    text-align: center;
+}
+
+input {
+    background: #ffffff;
+    color: #333;
+    text-align: center;
+}
+
+button {
+    background: linear-gradient(45deg, #ff6a00, #ee0979);
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #ee0979, #ff6a00);
+    text-align: center;
+}
+
+.logout-button {
+    background: linear-gradient(45deg, #fc466b, #3f5efb);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.logout-button:hover {
+    transform: scale(1.1);
+    text-align: center;
+}
+
+#messages {
+    list-style: none;
+    padding: 10px;
+    
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+}
+
+#messages li {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 12px 18px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: #000;
+    font-weight: 500;
+    backdrop-filter: blur(5px);
+    text-align: center;
+}
